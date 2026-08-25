@@ -1,6 +1,12 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "react";
 
-import { Play, Info } from "lucide-react";
+import {
+  Play,
+  Info,
+} from "lucide-react";
 
 import movieInstance from "../../utility/movieInstance";
 
@@ -10,10 +16,16 @@ import styles from "./Banner.module.css";
 
 import logo from "../../assets/image/logo.png";
 
-const BANNER_BASE = "https://image.tmdb.org/t/p/original";
+
+const BANNER_BASE =
+  "https://image.tmdb.org/t/p/original";
+
 
 function Banner() {
-  const [bannerImage, setBannerImage] = useState(null);
+
+  const [bannerImage, setBannerImage] =
+    useState(null);
+
 
   /*
   =========================================
@@ -22,6 +34,7 @@ function Banner() {
   */
 
   const truncate = (text, length) => {
+
     if (!text) {
       return "";
     }
@@ -33,6 +46,7 @@ function Banner() {
     return text.substring(0, length) + "...";
   };
 
+
   /*
   =========================================
   FETCH BANNER
@@ -40,42 +54,71 @@ function Banner() {
   */
 
   useEffect(() => {
-    const fetchBanner = async () => {
-      try {
-        const response = await movieInstance.get(
-          requests.fetchNetflixOriginals,
-        );
 
-        const results = response.data.results;
+    const fetchBanner = async () => {
+
+      try {
+
+        const response =
+          await movieInstance.get(
+            requests.fetchNetflixOriginals
+          );
+
+
+        const results =
+          response.data.results;
+
 
         /*
         Check whether movies exist
         */
 
-        if (results && results.length > 0) {
+        if (
+          results &&
+          results.length > 0
+        ) {
+
           /*
           Select random movie
           */
 
-          const randomIndex = Math.floor(Math.random() * results.length);
+          const randomIndex =
+            Math.floor(
+              Math.random() *
+              results.length
+            );
+
 
           /*
           Store selected movie
           */
 
-          setBannerImage(results[randomIndex]);
+          setBannerImage(
+            results[randomIndex]
+          );
+
         }
+
       } catch (error) {
-        console.error("Failed to fetch banner:", error);
+
+        console.error(
+          "Failed to fetch banner:",
+          error
+        );
+
       }
+
     };
+
 
     /*
     Execute function
     */
 
     fetchBanner();
+
   }, []);
+
 
   /*
   =========================================
@@ -84,8 +127,15 @@ function Banner() {
   */
 
   if (!bannerImage) {
-    return <div className={styles.banner} />;
+
+    return (
+      <div
+        className={styles.banner}
+      />
+    );
+
   }
+
 
   /*
   =========================================
@@ -100,92 +150,150 @@ function Banner() {
     bannerImage.title ||
     "Netflix Movie";
 
+
   /*
   =========================================
   DYNAMIC IMAGE
   =========================================
   */
 
-  const backgroundImage = bannerImage.backdrop_path
-    ? `${BANNER_BASE}${bannerImage.backdrop_path}`
-    : null;
+  const backgroundImage =
+    bannerImage.backdrop_path
+      ? `${BANNER_BASE}${bannerImage.backdrop_path}`
+      : null;
+
 
   return (
+
     <section
       className={styles.banner}
       style={
         backgroundImage
           ? {
-              backgroundImage: `url("${backgroundImage}")`,
+              backgroundImage:
+                `url("${backgroundImage}")`,
             }
           : {}
       }
     >
+
       {/* =================================
           DARK OVERLAY
       ================================= */}
 
-      <div className={styles.overlay} />
+      <div
+        className={styles.overlay}
+      />
+
 
       {/* =================================
           BOTTOM FADE
       ================================= */}
 
-      <div className={styles.bottomFade} />
+      <div
+        className={styles.bottomFade}
+      />
+
 
       {/* =================================
           BANNER CONTENT
       ================================= */}
 
-      <div className={styles.content}>
+      <div
+        className={styles.content}
+      >
+
         {/* =================================
             NETFLIX LOGO
         ================================= */}
 
-        <img src={logo} alt="Netflix" className={styles.logo} />
+        <img
+          src={logo}
+          alt="Netflix"
+          className={styles.logo}
+        />
+
 
         {/* =================================
             MOVIE TITLE
         ================================= */}
 
-        <h1 className={styles.title}>{movieTitle}</h1>
+        <h1
+          className={styles.title}
+        >
+          {movieTitle}
+        </h1>
+
 
         {/* =================================
             MOVIE DESCRIPTION
         ================================= */}
 
-        <p className={styles.description}>
-          {truncate(bannerImage.overview, 120)}
+        <p
+          className={styles.description}
+        >
+          {truncate(
+            bannerImage.overview,
+            120
+          )}
         </p>
+
 
         {/* =================================
             BUTTONS
         ================================= */}
 
-        <div className={styles.buttons}>
+        <div
+          className={styles.buttons}
+        >
+
           {/* =================================
               PLAY BUTTON
           ================================= */}
 
-          <button className={styles.playButton}>
-            <Play size={22} fill="currentColor" />
+          <button
+            className={styles.playButton}
+          >
 
-            <span>Play</span>
+            <Play
+              size={22}
+              fill="currentColor"
+            />
+
+            <span>
+              Play
+            </span>
+
           </button>
+
 
           {/* =================================
               MORE INFO BUTTON
           ================================= */}
 
-          <button className={styles.infoButton}>
-            <Info size={22} />
+          <button
+            className={styles.infoButton}
+          >
 
-            <span>More Info</span>
+            <Info
+              size={22}
+            />
+
+            <span>
+              More Info
+            </span>
+
           </button>
+
         </div>
+
       </div>
+
     </section>
+
   );
+
 }
+
 
 export default Banner;

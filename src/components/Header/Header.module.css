@@ -1,6 +1,7 @@
-  css/* =========================================
+/* =========================================
    NETFLIX CLONE - HEADER
 ========================================= */
+
 
 /* =========================================
    MAIN HEADER
@@ -27,8 +28,9 @@
     background 0.3s ease,
     backdrop-filter 0.3s ease,
     box-shadow 0.3s ease;
-    background-color: black;
+    /* background-color: black; */
 }
+
 
 /* =========================================
    SCROLLED HEADER
@@ -44,6 +46,7 @@
   box-shadow:
     0 2px 10px rgba(0, 0, 0, 0.3);
 }
+
 
 /* =========================================
    HEADER CONTAINER
@@ -62,6 +65,7 @@
   box-sizing: border-box;
 }
 
+
 /* =========================================
    LOGO
 ========================================= */
@@ -77,6 +81,7 @@
 
   cursor: pointer;
 }
+
 
 /* =========================================
    NAVIGATION
@@ -94,6 +99,7 @@
   flex: 1;
 }
 
+
 .nav a {
   color: #ffffff;
 
@@ -108,9 +114,11 @@
   transition: color 0.3s ease;
 }
 
+
 .nav a:hover {
   color: #b3b3b3;
 }
+
 
 /* =========================================
    RIGHT SECTION
@@ -126,6 +134,7 @@
   margin-left: auto;
 }
 
+
 /* =========================================
    SEARCH
 ========================================= */
@@ -137,6 +146,7 @@
 
   align-items: center;
 }
+
 
 .search button {
   display: flex;
@@ -156,15 +166,18 @@
   cursor: pointer;
 }
 
+
 .search button:hover {
   opacity: 0.7;
 }
+
 
 .search button svg {
   width: 22px;
 
   height: 22px;
 }
+
 
 /* Search Input */
 
@@ -192,9 +205,11 @@
   box-sizing: border-box;
 }
 
+
 .search input::placeholder {
   color: #b3b3b3;
 }
+
 
 /* =========================================
    NOTIFICATIONS
@@ -209,6 +224,7 @@
 
   justify-content: center;
 }
+
 
 .notifications button {
   display: flex;
@@ -228,15 +244,18 @@
   cursor: pointer;
 }
 
+
 .notifications button:hover {
   opacity: 0.7;
 }
+
 
 .notifications button svg {
   width: 22px;
 
   height: 22px;
 }
+
 
 /* Notification Badge */
 
@@ -268,6 +287,7 @@
   font-weight: 700;
 }
 
+
 /* =========================================
    PROFILE
 ========================================= */
@@ -279,6 +299,7 @@
 
   align-items: center;
 }
+
 
 .profile button {
   display: flex;
@@ -300,9 +321,11 @@
   cursor: pointer;
 }
 
+
 .profile button:hover {
   opacity: 0.7;
 }
+
 
 .profile button svg:first-child {
   width: 24px;
@@ -310,11 +333,13 @@
   height: 24px;
 }
 
+
 .profile button svg:last-child {
   width: 16px;
 
   height: 16px;
 }
+
 
 /* =========================================
    PROFILE DROPDOWN
@@ -345,6 +370,7 @@
     0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+
 /* Dropdown Links */
 
 .dropdown a {
@@ -361,9 +387,11 @@
   transition: background 0.2s ease;
 }
 
+
 .dropdown a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
 
 /* =========================================
    RESPONSIVE
@@ -389,6 +417,7 @@
     gap: 14px;
   }
 }
+
 
 /* =========================================
    TABLET / MOBILE
@@ -427,6 +456,7 @@
   }
 }
 
+
 /* =========================================
    SMALL MOBILE
 ========================================= */
@@ -454,4 +484,3 @@
     height: 21px;
   }
 }
-
