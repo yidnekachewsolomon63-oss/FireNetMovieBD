@@ -38,14 +38,14 @@ function SlideShow({ title, movies }) {
         slidesPerView={5.8}
         className={styles.swiper}
       >
-
-        {movies.map((movie) => (
+         {/* rendering movie  */}
+        {movies.map((movie) => (    
 
           <SwiperSlide
             key={movie.id}
             className={styles.swiperSlide}
           >
-
+            
             <MovieCard
               movie={movie}
             />
