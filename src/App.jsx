@@ -1,9 +1,9 @@
 import "./App.css";
 
-import Header from "./Components/Header/Header";
-import Banner from "./Components/Banner/Banner";
-import DisplayRow from "./Components/DisplayRow/DisplayRow";
-import Footer from "./Components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
+import DisplayRow from "./components/DisplayRow/DisplayRow";
+import Footer from "./components/Footer/Footer";
 
 // https://moviebdclonen.netlify.app/
 
